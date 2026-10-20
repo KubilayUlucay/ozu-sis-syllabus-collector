@@ -1,0 +1,22 @@
+{
+  "manifest_version": 3,
+  "name": "OzU Syllabus Collector",
+  "version": "0.3.0",
+  "description": "Collect transcript-matched syllabi from your existing OzU SIS session.",
+  "permissions": [
+    "activeTab",
+    "scripting",
+    "downloads",
+    "storage",
+    "webRequest"
+  ],
+  "host_permissions": [
+    "https://sis.ozyegin.edu.tr/*"
+  ],
+  "action": {
+    "default_title": "Open syllabus collector"
+  },
+  "background": {
+    "service_worker": "background.js"
+  }
+}

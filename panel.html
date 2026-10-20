@@ -1,0 +1,13 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><title>OzU Syllabus Collector</title><link rel="stylesheet" href="style.css"></head><body>
+<main><p class="eyebrow">MASTER’S APPLICATIONS · COURSE EVIDENCE</p><h1>Collect your syllabi.</h1>
+<p>Use your existing SIS login. Keep <b>Courses Offered</b> open in its tab, and keep this panel open while collecting.</p>
+<section><h2>1 · Check the connection</h2><button id="inspect">Check SIS tab</button><p id="connection">Not checked yet.</p></section>
+<section><h2>2 · Test one course</h2><div class="fields"><label>Transcript attempt<select id="attempt"></select></label><label>Attended section, if known<input id="section" placeholder="Unknown — use first available syllabus" maxlength="20"></label></div>
+<p class="muted">Configure your course list in courses.json. A section entered here is your assertion; the log records it as user-provided. Otherwise, one available same-term syllabus is saved and its attended section is labeled unknown.</p>
+<button id="test" disabled>Test selected course</button><label class="check"><input id="confirmed" type="checkbox"> I checked the test PDFs: course and term are correct.</label>
+<button id="all" disabled>Collect all attempts</button><button id="stop" class="secondary" disabled>Stop after current operation</button>
+<p class="muted">Repeats, failed and withdrawn attempts keep their status. No other-term substitution. Separate lab courses are not asserted from this transcript.</p></section>
+<section><h2>Your transcript checklist</h2><p id="coverage"></p><p class="muted">Sections entered here are saved and used in both tests and the full run. A downloaded fallback section is never converted into an attended section.</p><div class="table-scroll"><table><thead><tr><th>Term</th><th>Course</th><th>Transcript status</th><th>Your section</th><th>Collection status</th></tr></thead><tbody id="checklist"></tbody></table></div></section>
+<section><div class="heading"><h2>Progress & results</h2><button id="export" class="secondary">Export log</button></div><progress id="progress" value="0" max="1"></progress><p id="status" role="status">Ready for a connection check.</p><pre id="log" aria-live="polite"></pre></section>
+<p class="muted">Files save under Downloads/OzU_Syllabi. Logs stay in this browser until you export or clear them. This extension sends no data to the assistant or any external server; it requests syllabus PDFs from SIS. Test one configured course before collecting the full list.</p>
+<button id="clear" class="secondary">Clear saved collection log</button></main><script src="adapter.js"></script><script src="panel.js"></script></body></html>

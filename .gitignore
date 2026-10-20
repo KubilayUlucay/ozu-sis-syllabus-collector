@@ -1,0 +1,7 @@
+collection_log*.json
+*.pdf
+*.doc
+*.docx
+*.zip
+node_modules/
+.DS_Store
